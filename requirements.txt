@@ -1,0 +1,12 @@
+# Instale na Raspberry Pi (dentro de um virtualenv, de preferência):
+#   pip install -r requirements.txt
+#
+# No PC, para só testar a interface (sem GPIO/RFID reais), basta:
+#   pip install pygame
+
+pygame>=2.5.0
+
+# --- Só necessário na Raspberry Pi de verdade: ---
+gpiozero>=2.0
+mfrc522>=0.0.7
+spidev>=3.6
