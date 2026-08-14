@@ -15,9 +15,25 @@ WINDOW_SIZE = (540, 960)  # metade de 1080x1920, mesma proporção
 # ---------------------------------------------------------------------------
 # BOTÃO ÚNICO (gpiozero, pull-up interno, liga ao GND quando pressionado)
 # ---------------------------------------------------------------------------
-PIN_BUTTON = 17
+PIN_BUTTON_SELECT = 17
+PIN_BUTTON_BACK = 15
+
 # Toque curto = confirmar (A). Segurar mais que isso = voltar (B).
 LONG_PRESS_SECONDS = 0.5
+
+# ---------------------------------------------------------------------------
+# Configuração da fita 
+# ---------------------------------------------------------------------------
+LED_COUNT = 95
+LED_PIN = 13
+LED_FREQ_HZ = 800000
+LED_DMA = 10
+LED_BRIGHTNESS = 100
+LED_INVERT = False
+LED_CHANNEL = 1
+
+LED_SECTION = 2
+
 
 
 # ---------------------------------------------------------------------------

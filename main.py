@@ -17,12 +17,14 @@ import time
 
 import pygame
 
+
 import config
 from ui import theme
 from hardware.input_handler import InputHandler
 from hardware.rfid_reader import RFIDReader
+from hardware.led_strip import LEDStrip
 from data.particles_data import PARTICLES
-from data.rfid_map import RFID_MAP  # gerado a partir de rfid_map.json
+from data.particula_map import RFID_MAP  # gerado a partir de rfid_map.json
 
 from screens.home import HomeScreen
 from screens.cube_reader import CubeReaderScreen
@@ -76,7 +78,9 @@ class App:
         self.clock = pygame.time.Clock()
         self.start_time = time.time()
         self.running = True
+        self.leds = LEDStrip()
 
+             
         self.input = InputHandler()
 
         # instancia todas as telas uma vez (mantém estado ao trocar de tela
@@ -92,14 +96,25 @@ class App:
     # -- RFID callbacks (rodam em outra thread -> só ajustam estado, sem desenhar) --
     def _on_rfid_placed(self, uid):
         particle_key = RFID_MAP.get(uid)
+
         if particle_key and particle_key in PARTICLES:
             particle = PARTICLES[particle_key]
-            self.current.on_cube_placed(particle)
-        else:
-            print(f"[rfid] UID desconhecido: {uid} — adicione em data/rfid_map.json")
+            r,g,b = particle["color"]
+            self.leds.show(
+                particle_key,
+                r,
+                g,
+                b
+            )
 
+            self.current.on_cube_placed(particle)
+
+        else:
+            print(f"[rfid] UID desconhecido: {uid} " f"— adicione em data/particula_map.json")
+            
     def _on_rfid_removed(self):
         self.current.on_cube_removed()
+        self.leds.clear()      
 
     def _simulate_cube(self, particle_key):
         particle = PARTICLES.get(particle_key)

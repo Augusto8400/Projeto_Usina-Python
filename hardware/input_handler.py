@@ -69,17 +69,28 @@ class InputHandler:
         
     def _setup_button(self):
 
-        self._button = GPIOButton(
-            config.PIN_BUTTON,
+        self._button_select = GPIOButton(
+            config.PIN_BUTTON_SELECT,
             pull_up=True,
             bounce_time=0.05,
             hold_time=config.LONG_PRESS_SECONDS,
             hold_repeat=False,
         )
-
-        self._button.when_pressed = self._on_button_pressed
-        self._button.when_held = self._on_button_held
-        self._button.when_released = self._on_button_released
+        
+        self._button_back = GPIOButton(
+            config.PIN_BUTTON_BACK,
+            pull_up=True,
+            bounce_time=0.05,
+            hold_time=config.LONG_PRESS_SECONDS,
+            hold_repeat=False,
+        )
+        
+        self._button_select.when_pressed = self._on_button_pressed
+        #self._button_select.when_held = self._on_button_held
+        self._button_select.when_released = self._on_button_released
+        self._button_back.when_pressed = self._on_button_pressed
+        #self._button_back.when_held = self._on_button_held
+        self._button_back.when_released = self._on_button_held
     # -- botão --
     def _on_button_pressed(self):
         self._button_long_fired = False

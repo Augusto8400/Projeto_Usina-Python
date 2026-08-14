@@ -1,0 +1,93 @@
+{
+    "_comentario": "Mapeamento das partículas: UID da tag RFID e índices das seções da fita LED.",
+
+    "gluon": {
+        "uid": "94118242",
+        "leds": [1, 9]
+    },
+
+    "quark_bottom": {
+        "uid": "1368399167",
+        "leds": [2, 8]
+    },
+
+    "quark_strange": {
+        "uid": "100000002",
+        "leds": [3, 7]
+    },
+
+    "quark_down": {
+        "uid": "100000003",
+        "leds": [4, 6]
+    },
+
+    "foton": {
+        "uid": "122913161392",
+        "leds": [10, 18]
+    },
+
+    "top": {
+        "uid": "100000004",
+        "leds": [11, 17]
+    },
+
+    "quark_charm": {
+        "uid": "100000005",
+        "leds": [12, 16]
+    },
+
+    "quark_up": {
+        "uid": "100000006",
+        "leds": [13, 15]
+    },
+
+    "gavitron": {
+        "uid": "100000007",
+        "leds": [20, 30]
+    },
+
+    "bosonZ": {
+        "uid": "100000008",
+        "leds": [21, 29]
+    },
+
+    "tau": {
+        "uid": "100000009",
+        "leds": [22, 28]
+    },
+
+    "muon": {
+        "uid": "100000010",
+        "leds": [23, 27]
+    },
+
+    "eletron": {
+        "uid": "985161467825",
+        "leds": [24, 26]
+    },
+
+    "higgs": {
+        "uid": "890123456",
+        "leds": [31, 41]
+    },
+
+    "boson_w": {
+        "uid": "100000011",
+        "leds": [32, 40]
+    },
+
+    "neutrino_tau": {
+        "uid": "100000012",
+        "leds": [33, 39]
+    },
+
+    "neutrino_muon": {
+        "uid": "100000013",
+        "leds": [34, 38]
+    },
+
+    "neutrino_electron": {
+        "uid": "100000014",
+        "leds": [35, 37]
+    }
+}
