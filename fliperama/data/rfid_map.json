@@ -1,0 +1,12 @@
+{
+  "_comentario": "Mapeia o UID de cada tag RFID (lido pelo leitor) para a chave da partícula em particles_data.py. Preencha rodando 'python3 tools/descobrir_uid.py' com cada cubo e anotando o UID mostrado.",
+
+  "123456789": "eletron",
+  "234567890": "quark_up",
+  "345678901": "quark_down",
+  "456789012": "foton",
+  "567890123": "neutrino",
+  "678901234": "gluon",
+  "789012345": "positron",
+  "890123456": "higgs"
+}
